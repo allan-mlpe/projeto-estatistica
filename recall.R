@@ -1,5 +1,8 @@
 # arq ?o objeto que aponta para o arquivo com os dados
-setwd("/home/pauloserrafh/Documents/Mestrado/UFPE/2017.2/Estatistica/Projeto") # Onde se localiza o arquivo da tabela
+# unix
+#setwd("./datasets/recall")
+# windows
+setwd(".\\datasets\\recall") # Onde se localiza o arquivo da tabela
 # "dados-recall-2016-formatados.csv" - nome do arquivo
 entrada <- read.table("dados-recall-2016-formatados.csv", header =TRUE, sep = ",")
 #print(entrada)
