@@ -4,11 +4,28 @@ setwd("./datasets/empregos-pe") #Para linux
 # data
 data <- read.table("dataset.csv", header = TRUE, sep=";", encoding = "UTF-8")
 
+#Função para cálculo da moda
 moda <- function(d){
-	dd <- table(d)
-	valores <- which(dd==max(dd))
-	vmodal <- as.numeric(names(valores))
-	return(vmodal)
+  dd <- table(d)
+  valores <- which(dd==max(dd))
+  vmodal <- as.numeric(names(valores))
+  return(vmodal)
+}
+
+#Classe que representa um grupo de dados do dataset
+GrupoDados <- function(amostra, label, mesoregiao = NULL) {
+  GrupoDados <- list(
+    label = label,
+    mesoregiao = mesoregiao,
+    media = mean(amostra),
+    moda = moda(amostra),
+    mediana = median(amostra),
+    desvioPadrao = sd(amostra),
+    variancia = var(amostra)
+  )
+  
+  class(GrupoDados) <- "GrupoDados"
+  return(GrupoDados)
 }
 
 ############################################
@@ -18,54 +35,56 @@ moda <- function(d){
 # PELO NUMERO DE CIDADES.
 ############################################
 
+# constantes - labels
+AGROPECUARIA <- "Agropecuária"
+EXTRATIVA <- "Extrativa Mineral"
+INDUSTRIA <- "Indústria de Transformação"
+CONSTRUCAO <- "Construção Civil"
+SERVICOS_PUBLICOS <- "Serviços Industriais de Utilidade Pública"
+COMERCIO <- "Comércio"
+SERVICOS <- "Serviços"
+ADM_PUBLICA <- "Administração Pública"
+
+# Constantes - mesoregiões
+MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO <- "São Francisco Pernambucano"
+MESOREGIAO_SERTAO_PERNAMBUCANO <- "Sertão Pernambucano"
+MESOREGIAO_AGRESTE_PERNAMBUCANO <- "Agreste Pernambucano"
+MESOREGIAO_ZONA_DA_MATA <- "Zona da Mata"
+MESOREGIAO_METROPOLITANA <- "Metropolitana do Recife"
+
+# constantes - dados
+AMOSTRA_AGROPECUARIA <- data$Agropecuaria
+AMOSTRA_EXTRATIVA <- data$Extrativa.mineral
+AMOSTRA_INDUSTRIA <- data$Industria.de.transformacao
+AMOSTRA_CONSTRUCAO <- data$Construcao.civil
+AMOSTRA_SERVICOS_PUBLICOS <- data$Servicos.industriais.de.utilidade.publica
+AMOSTRA_COMERCIO <- data$Comercio
+AMOSTRA_SERVICOS <- data$Servicos
+AMOSTRA_ADM_PUBLICA <- data$Administracao.publica
+
 #Agropecuaria
-mean(data$Agropecuaria)
-median(data$Agropecuaria)
-moda(data$Agropecuaria)
-var(data$Agropecuaria)
-sd(data$Agropecuaria)
+agropecuaria <- GrupoDados(AMOSTRA_AGROPECUARIA, AGROPECUARIA)
+
 #Extrativa
-mean(data$Extrativa.mineral)
-median(data$Extrativa.mineral)
-moda(data$Extrativa.mineral)
-var(data$Extrativa.mineral)
-sd(data$Extrativa.mineral)
+extrativa <- GrupoDados(AMOSTRA_EXTRATIVA, EXTRATIVA)
+
 #Industria
-mean(data$Industria.de.transformacao)
-median(data$Industria.de.transformacao)
-moda(data$Industria.de.transformacao)
-var(data$Industria.de.transformacao)
-sd(data$Industria.de.transformacao)
+industria <- GrupoDados(AMOSTRA_INDUSTRIA, INDUSTRIA)
+
 #Construção
-mean(data$Construcao.civil)
-median(data$Construcao.civil)
-moda(data$Construcao.civil)
-var(data$Construcao.civil)
-sd(data$Construcao.civil)
+construcao <- GrupoDados(AMOSTRA_CONSTRUCAO, CONSTRUCAO)
+
 #ServiçosPublicos
-mean(data$Servicos.industriais.de.utilidade.publica)
-median(data$Servicos.industriais.de.utilidade.publica)
-moda(data$Servicos.industriais.de.utilidade.publica)
-var(data$Servicos.industriais.de.utilidade.publica)
-sd(data$Servicos.industriais.de.utilidade.publica)
+servicosPublicos <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS, SERVICOS_PUBLICOS)
+
 #Comercio
-mean(data$Comercio)
-median(data$Comercio)
-moda(data$Comercio)
-var(data$Comercio)
-sd(data$Comercio)
+comercio <- GrupoDados(AMOSTRA_COMERCIO, COMERCIO)
+
 #Serviços
-mean(data$Servicos)
-median(data$Servicos)
-moda(data$Servicos)
-var(data$Servicos)
-sd(data$Servicos)
+servicos <- GrupoDados(AMOSTRA_SERVICOS, SERVICOS)
+
 #AdmPublica
-mean(data$Servicos)
-median(data$Servicos)
-moda(data$Servicos)
-var(data$Servicos)
-sd(data$Servicos)
+administracaoPublica <- GrupoDados(AMOSTRA_ADM_PUBLICA, ADM_PUBLICA)
 
 ############################################
 # TODO:
@@ -79,267 +98,65 @@ sd(data$Servicos)
 #Mesorregião do São Francisco Pernambucano
 #comeca em Petrolandia (linha 2) vai até Itacuruba(linha 16)
 #É preciso calcular media, moda, mediana, desvio e variancia para cada coluna
-
-#Agropecuaria
-mean(data$Agropecuaria[1:15])
-median(data$Agropecuaria[1:15])
-moda(data$Agropecuaria[1:15])
-var(data$Agropecuaria[1:15])
-sd(data$Agropecuaria[1:15])
-#Extrativa
-mean(data$Extrativa.mineral[1:15])
-median(data$Extrativa.mineral[1:15])
-moda(data$Extrativa.mineral[1:15])
-var(data$Extrativa.mineral[1:15])
-sd(data$Extrativa.mineral[1:15])
-#Industria
-mean(data$Industria.de.transformacao[1:15])
-median(data$Industria.de.transformacao[1:15])
-moda(data$Industria.de.transformacao[1:15])
-var(data$Industria.de.transformacao[1:15])
-sd(data$Industria.de.transformacao[1:15])
-#Construção
-mean(data$Construcao.civil[1:15])
-median(data$Construcao.civil[1:15])
-moda(data$Construcao.civil[1:15])
-var(data$Construcao.civil[1:15])
-sd(data$Construcao.civil[1:15])
-#ServiçosPublicos
-mean(data$Servicos.industriais.de.utilidade.publica[1:15])
-median(data$Servicos.industriais.de.utilidade.publica[1:15])
-moda(data$Servicos.industriais.de.utilidade.publica[1:15])
-var(data$Servicos.industriais.de.utilidade.publica[1:15])
-sd(data$Servicos.industriais.de.utilidade.publica[1:15])
-#Comercio
-mean(data$Comercio[1:15])
-median(data$Comercio[1:15])
-moda(data$Comercio[1:15])
-var(data$Comercio[1:15])
-sd(data$Comercio[1:15])
-#Serviços
-mean(data$Servicos[1:15])
-median(data$Servicos[1:15])
-moda(data$Servicos[1:15])
-var(data$Servicos[1:15])
-sd(data$Servicos[1:15])
-#AdmPublica
-mean(data$Servicos[1:15])
-median(data$Servicos[1:15])
-moda(data$Servicos[1:15])
-var(data$Servicos[1:15])
-sd(data$Servicos[1:15])
+agropecuariaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_AGROPECUARIA[1:15], AGROPECUARIA, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
+extrativaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_EXTRATIVA[1:15], EXTRATIVA, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
+industriaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_INDUSTRIA[1:15], INDUSTRIA, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
+construcaoSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_CONSTRUCAO[1:15], CONSTRUCAO, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
+servicosPublicosSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[1:15], SERVICOS_PUBLICOS, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
+comercioSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_COMERCIO[1:15], COMERCIO, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
+servicosSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_SERVICOS[1:15], SERVICOS, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
+admPublicaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[1:15], ADM_PUBLICA, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 
 #Mesorregião do Sertão Pernambucano
 #comeca em Araripina (linha 17) vai até Sertânia (linha 57)
 #É preciso calcular media, moda, mediana, desvio e variancia para cada coluna
+agropecuariaSertaoPernambucano <- GrupoDados(AMOSTRA_AGROPECUARIA[16:56], AGROPECUARIA, MESOREGIAO_SERTAO_PERNAMBUCANO)
+extrativaSertaoPernambucano <- GrupoDados(AMOSTRA_EXTRATIVA[16:56], EXTRATIVA, MESOREGIAO_SERTAO_PERNAMBUCANO)
+industriaSertaoPernambucano <- GrupoDados(AMOSTRA_INDUSTRIA[16:56], INDUSTRIA, MESOREGIAO_SERTAO_PERNAMBUCANO)
+construcaoSertaoPernambucano <- GrupoDados(AMOSTRA_CONSTRUCAO[16:56], CONSTRUCAO, MESOREGIAO_SERTAO_PERNAMBUCANO)
+servicosPublicosSertaoPernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[16:56], SERVICOS_PUBLICOS, MESOREGIAO_SERTAO_PERNAMBUCANO)
+comercioSertaoPernambucano <- GrupoDados(AMOSTRA_COMERCIO[16:56], COMERCIO, MESOREGIAO_SERTAO_PERNAMBUCANO)
+servicosSertaoPernambucano <- GrupoDados(AMOSTRA_SERVICOS[16:56], SERVICOS, MESOREGIAO_SERTAO_PERNAMBUCANO)
+admPublicaSertaoPernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[16:56], ADM_PUBLICA, MESOREGIAO_SERTAO_PERNAMBUCANO)
 
-#Agropecuaria
-mean(data$Agropecuaria[16:56])
-median(data$Agropecuaria[16:56])
-moda(data$Agropecuaria[16:56])
-var(data$Agropecuaria[16:56])
-sd(data$Agropecuaria[16:56])
-#Extrativa
-mean(data$Extrativa.mineral[16:56])
-median(data$Extrativa.mineral[16:56])
-moda(data$Extrativa.mineral[16:56])
-var(data$Extrativa.mineral[16:56])
-sd(data$Extrativa.mineral[16:56])
-#Industria
-mean(data$Industria.de.transformacao[16:56])
-median(data$Industria.de.transformacao[16:56])
-moda(data$Industria.de.transformacao[16:56])
-var(data$Industria.de.transformacao[16:56])
-sd(data$Industria.de.transformacao[16:56])
-#Construção
-mean(data$Construcao.civil[16:56])
-median(data$Construcao.civil[16:56])
-moda(data$Construcao.civil[16:56])
-var(data$Construcao.civil[16:56])
-sd(data$Construcao.civil[16:56])
-#ServiçosPublicos
-mean(data$Servicos.industriais.de.utilidade.publica[16:56])
-median(data$Servicos.industriais.de.utilidade.publica[16:56])
-moda(data$Servicos.industriais.de.utilidade.publica[16:56])
-var(data$Servicos.industriais.de.utilidade.publica[16:56])
-sd(data$Servicos.industriais.de.utilidade.publica[16:56])
-#Comercio
-mean(data$Comercio[16:56])
-median(data$Comercio[16:56])
-moda(data$Comercio[16:56])
-var(data$Comercio[16:56])
-sd(data$Comercio[16:56])
-#Serviços
-mean(data$Servicos[16:56])
-median(data$Servicos[16:56])
-moda(data$Servicos[16:56])
-var(data$Servicos[16:56])
-sd(data$Servicos[16:56])
-#AdmPublica
-mean(data$Servicos[16:56])
-median(data$Servicos[16:56])
-moda(data$Servicos[16:56])
-var(data$Servicos[16:56])
-sd(data$Servicos[16:56])
 
 #Mesorregião do Agreste Pernambucano
 #comeca em Agrestina (linha 58) vai até Vertentes (linha 128)
 #É preciso calcular media, moda, mediana, desvio e variancia para cada coluna
+agropecuariaAgrestePernambucano <- GrupoDados(AMOSTRA_AGROPECUARIA[57:127], AGROPECUARIA, MESOREGIAO_AGRESTE_PERNAMBUCANO)
+extrativaAgrestePernambucano <- GrupoDados(AMOSTRA_EXTRATIVA[57:127], EXTRATIVA, MESOREGIAO_AGRESTE_PERNAMBUCANO)
+industriaAgrestePernambucano <- GrupoDados(AMOSTRA_INDUSTRIA[57:127], INDUSTRIA, MESOREGIAO_AGRESTE_PERNAMBUCANO)
+construcaoAgrestePernambucano <- GrupoDados(AMOSTRA_CONSTRUCAO[57:127], CONSTRUCAO, MESOREGIAO_AGRESTE_PERNAMBUCANO)
+servicosPublicosAgrestePernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[57:127], SERVICOS_PUBLICOS, MESOREGIAO_AGRESTE_PERNAMBUCANO)
+comercioAgrestePernambucano <- GrupoDados(AMOSTRA_COMERCIO[57:127], COMERCIO, MESOREGIAO_AGRESTE_PERNAMBUCANO)
+servicosAgrestePernambucano <- GrupoDados(AMOSTRA_SERVICOS[57:127], SERVICOS, MESOREGIAO_AGRESTE_PERNAMBUCANO)
+admPublicaAgrestePernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[57:127], ADM_PUBLICA, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 
-#Agropecuaria
-mean(data$Agropecuaria[57:127])
-median(data$Agropecuaria[57:127])
-moda(data$Agropecuaria[57:127])
-var(data$Agropecuaria[57:127])
-sd(data$Agropecuaria[57:127])
-#Extrativa
-mean(data$Extrativa.mineral[57:127])
-median(data$Extrativa.mineral[57:127])
-moda(data$Extrativa.mineral[57:127])
-var(data$Extrativa.mineral[57:127])
-sd(data$Extrativa.mineral[57:127])
-#Industria
-mean(data$Industria.de.transformacao[57:127])
-median(data$Industria.de.transformacao[57:127])
-moda(data$Industria.de.transformacao[57:127])
-var(data$Industria.de.transformacao[57:127])
-sd(data$Industria.de.transformacao[57:127])
-#Construção
-mean(data$Construcao.civil[57:127])
-median(data$Construcao.civil[57:127])
-moda(data$Construcao.civil[57:127])
-var(data$Construcao.civil[57:127])
-sd(data$Construcao.civil[57:127])
-#ServiçosPublicos
-mean(data$Servicos.industriais.de.utilidade.publica[57:127])
-median(data$Servicos.industriais.de.utilidade.publica[57:127])
-moda(data$Servicos.industriais.de.utilidade.publica[57:127])
-var(data$Servicos.industriais.de.utilidade.publica[57:127])
-sd(data$Servicos.industriais.de.utilidade.publica[57:127])
-#Comercio
-mean(data$Comercio[57:127])
-median(data$Comercio[57:127])
-moda(data$Comercio[57:127])
-var(data$Comercio[57:127])
-sd(data$Comercio[57:127])
-#Serviços
-mean(data$Servicos[57:127])
-median(data$Servicos[57:127])
-moda(data$Servicos[57:127])
-var(data$Servicos[57:127])
-sd(data$Servicos[57:127])
-#AdmPublica
-mean(data$Servicos[57:127])
-median(data$Servicos[57:127])
-moda(data$Servicos[57:127])
-var(data$Servicos[57:127])
-sd(data$Servicos[57:127])
 
 #Mesorregião da Zona da Mata Pernambucana
 #comeca em Chã de Alegria (linha 129) vai até Xexéu (linha 171)
 #É preciso calcular media, moda, mediana, desvio e variancia para cada coluna
+agropecuariaZonaDaMata <- GrupoDados(AMOSTRA_AGROPECUARIA[128:170], AGROPECUARIA, MESOREGIAO_ZONA_DA_MATA)
+extrativaZonaDaMata <- GrupoDados(AMOSTRA_EXTRATIVA[128:170], EXTRATIVA, MESOREGIAO_ZONA_DA_MATA)
+industriaZonaDaMata <- GrupoDados(AMOSTRA_INDUSTRIA[128:170], INDUSTRIA, MESOREGIAO_ZONA_DA_MATA)
+construcaoZonaDaMata <- GrupoDados(AMOSTRA_CONSTRUCAO[128:170], CONSTRUCAO, MESOREGIAO_ZONA_DA_MATA)
+servicosPublicosZonaDaMata <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[128:170], SERVICOS_PUBLICOS, MESOREGIAO_ZONA_DA_MATA)
+comercioZonaDaMata <- GrupoDados(AMOSTRA_COMERCIO[128:170], COMERCIO, MESOREGIAO_ZONA_DA_MATA)
+servicosZonaDaMata <- GrupoDados(AMOSTRA_SERVICOS[128:170], SERVICOS, MESOREGIAO_ZONA_DA_MATA)
+admPublicaZonaDaMata <- GrupoDados(AMOSTRA_ADM_PUBLICA[128:170], ADM_PUBLICA, MESOREGIAO_ZONA_DA_MATA)
 
-#Agropecuaria
-mean(data$Agropecuaria[128:170])
-median(data$Agropecuaria[128:170])
-moda(data$Agropecuaria[128:170])
-var(data$Agropecuaria[128:170])
-sd(data$Agropecuaria[128:170])
-#Extrativa
-mean(data$Extrativa.mineral[128:170])
-median(data$Extrativa.mineral[128:170])
-moda(data$Extrativa.mineral[128:170])
-var(data$Extrativa.mineral[128:170])
-sd(data$Extrativa.mineral[128:170])
-#Industria
-mean(data$Industria.de.transformacao[128:170])
-median(data$Industria.de.transformacao[128:170])
-moda(data$Industria.de.transformacao[128:170])
-var(data$Industria.de.transformacao[128:170])
-sd(data$Industria.de.transformacao[128:170])
-#Construção
-mean(data$Construcao.civil[128:170])
-median(data$Construcao.civil[128:170])
-moda(data$Construcao.civil[128:170])
-var(data$Construcao.civil[128:170])
-sd(data$Construcao.civil[128:170])
-#ServiçosPublicos
-mean(data$Servicos.industriais.de.utilidade.publica[128:170])
-median(data$Servicos.industriais.de.utilidade.publica[128:170])
-moda(data$Servicos.industriais.de.utilidade.publica[128:170])
-var(data$Servicos.industriais.de.utilidade.publica[128:170])
-sd(data$Servicos.industriais.de.utilidade.publica[128:170])
-#Comercio
-mean(data$Comercio[128:170])
-median(data$Comercio[128:170])
-moda(data$Comercio[128:170])
-var(data$Comercio[128:170])
-sd(data$Comercio[128:170])
-#Serviços
-mean(data$Servicos[128:170])
-median(data$Servicos[128:170])
-moda(data$Servicos[128:170])
-var(data$Servicos[128:170])
-sd(data$Servicos[128:170])
-#AdmPublica
-mean(data$Servicos[128:170])
-median(data$Servicos[128:170])
-moda(data$Servicos[128:170])
-var(data$Servicos[128:170])
-sd(data$Servicos[128:170])
 
 #Mesorregião Metropolitana do Recife
 #comeca em Abreu e Lima (linha 172) vai até São Lourenço da Mata (linha 186)
 #É preciso calcular media, moda, mediana, desvio e variancia para cada coluna
-
-#Agropecuaria
-mean(data$Agropecuaria[171:185])
-median(data$Agropecuaria[171:185])
-moda(data$Agropecuaria[171:185])
-var(data$Agropecuaria[171:185])
-sd(data$Agropecuaria[171:185])
-#Extrativa
-mean(data$Extrativa.mineral[171:185])
-median(data$Extrativa.mineral[171:185])
-moda(data$Extrativa.mineral[171:185])
-var(data$Extrativa.mineral[171:185])
-sd(data$Extrativa.mineral[171:185])
-#Industria
-mean(data$Industria.de.transformacao[171:185])
-median(data$Industria.de.transformacao[171:185])
-moda(data$Industria.de.transformacao[171:185])
-var(data$Industria.de.transformacao[171:185])
-sd(data$Industria.de.transformacao[171:185])
-#Construção
-mean(data$Construcao.civil[171:185])
-median(data$Construcao.civil[171:185])
-moda(data$Construcao.civil[171:185])
-var(data$Construcao.civil[171:185])
-sd(data$Construcao.civil[171:185])
-#ServiçosPublicos
-mean(data$Servicos.industriais.de.utilidade.publica[171:185])
-median(data$Servicos.industriais.de.utilidade.publica[171:185])
-moda(data$Servicos.industriais.de.utilidade.publica[171:185])
-var(data$Servicos.industriais.de.utilidade.publica[171:185])
-sd(data$Servicos.industriais.de.utilidade.publica[171:185])
-#Comercio
-mean(data$Comercio[171:185])
-median(data$Comercio[171:185])
-moda(data$Comercio[171:185])
-var(data$Comercio[171:185])
-sd(data$Comercio[171:185])
-#Serviços
-mean(data$Servicos[171:185])
-median(data$Servicos[171:185])
-moda(data$Servicos[171:185])
-var(data$Servicos[171:185])
-sd(data$Servicos[171:185])
-#AdmPublica
-mean(data$Servicos[171:185])
-median(data$Servicos[171:185])
-moda(data$Servicos[171:185])
-var(data$Servicos[171:185])
-sd(data$Servicos[171:185])
+agropecuariaMetropolitana <- GrupoDados(AMOSTRA_AGROPECUARIA[171:185], AGROPECUARIA, MESOREGIAO_METROPOLITANA)
+extrativaMetropolitana <- GrupoDados(AMOSTRA_EXTRATIVA[171:185], EXTRATIVA, MESOREGIAO_METROPOLITANA)
+industriaMetropolitana <- GrupoDados(AMOSTRA_INDUSTRIA[171:185], INDUSTRIA, MESOREGIAO_METROPOLITANA)
+construcaoMetropolitana <- GrupoDados(AMOSTRA_CONSTRUCAO[171:185], CONSTRUCAO, MESOREGIAO_METROPOLITANA)
+servicosPublicosMetropolitana <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[171:185], SERVICOS_PUBLICOS, MESOREGIAO_METROPOLITANA)
+comercioMetropolitana <- GrupoDados(AMOSTRA_COMERCIO[171:185], COMERCIO, MESOREGIAO_METROPOLITANA)
+servicosMetropolitana <- GrupoDados(AMOSTRA_SERVICOS[171:185], SERVICOS, MESOREGIAO_METROPOLITANA)
+admPublicaMetropolitana <- GrupoDados(AMOSTRA_ADM_PUBLICA[171:185], ADM_PUBLICA, MESOREGIAO_METROPOLITANA)
 
 ############################################
 # TODO:
