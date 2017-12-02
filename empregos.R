@@ -45,13 +45,9 @@ servicos <- GrupoDados(AMOSTRA_SERVICOS, SERVICOS)
 #AdmPublica
 administracaoPublica <- GrupoDados(AMOSTRA_ADM_PUBLICA, ADM_PUBLICA)
 
-############################################
-# TODO:
-# 1) CALCULAR A MEDIA DO TOTAL DE EMPREGOS
-# EM CADA MESORREGIAO.
-# SOMAR TODAS AS AREAS DE ATUACAO E DIVIDIR
-# PELO NUMERO DE CIDADES DA REGIAO.
-############################################
+#Total
+empregosTotal <- c(AMOSTRA_AGROPECUARIA, AMOSTRA_EXTRATIVA, AMOSTRA_INDUSTRIA, AMOSTRA_CONSTRUCAO, AMOSTRA_SERVICOS_PUBLICOS, AMOSTRA_COMERCIO, AMOSTRA_SERVICOS, AMOSTRA_ADM_PUBLICA)
+totalGeral <- GrupoDados(empregosTotal, TOTAL)
 
 #Os dados foram organizados baseado nas Mesorregiões do estado
 #Mesorregião do São Francisco Pernambucano
@@ -65,6 +61,8 @@ servicosPublicosSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS
 comercioSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_COMERCIO[1:15], COMERCIO, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 servicosSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_SERVICOS[1:15], SERVICOS, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 admPublicaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[1:15], ADM_PUBLICA, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
+empregosTotalSaoFranciscoPernambucano <- c(AMOSTRA_AGROPECUARIA[1:15], AMOSTRA_EXTRATIVA[1:15], AMOSTRA_INDUSTRIA[1:15], AMOSTRA_CONSTRUCAO[1:15], AMOSTRA_SERVICOS_PUBLICOS[1:15], AMOSTRA_COMERCIO[1:15], AMOSTRA_SERVICOS[1:15], AMOSTRA_ADM_PUBLICA[1:15])
+totalSaoFranciscoPernambucano <- GrupoDados(empregosTotalSaoFranciscoPernambucano, TOTAL, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 
 #Mesorregião do Sertão Pernambucano
 #comeca em Araripina (linha 17) vai até Sertânia (linha 57)
@@ -77,7 +75,8 @@ servicosPublicosSertaoPernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[16:56
 comercioSertaoPernambucano <- GrupoDados(AMOSTRA_COMERCIO[16:56], COMERCIO, MESOREGIAO_SERTAO_PERNAMBUCANO)
 servicosSertaoPernambucano <- GrupoDados(AMOSTRA_SERVICOS[16:56], SERVICOS, MESOREGIAO_SERTAO_PERNAMBUCANO)
 admPublicaSertaoPernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[16:56], ADM_PUBLICA, MESOREGIAO_SERTAO_PERNAMBUCANO)
-
+empregosTotalSertaoPernambucano <- c(AMOSTRA_AGROPECUARIA[16:56], AMOSTRA_EXTRATIVA[16:56], AMOSTRA_INDUSTRIA[16:56], AMOSTRA_CONSTRUCAO[16:56], AMOSTRA_SERVICOS_PUBLICOS[16:56], AMOSTRA_COMERCIO[16:56], AMOSTRA_SERVICOS[16:56], AMOSTRA_ADM_PUBLICA[16:56])
+totalSertaoPernambucano <- GrupoDados(empregosTotalSertaoPernambucano, TOTAL, MESOREGIAO_SERTAO_PERNAMBUCANO)
 
 #Mesorregião do Agreste Pernambucano
 #comeca em Agrestina (linha 58) vai até Vertentes (linha 128)
@@ -90,7 +89,8 @@ servicosPublicosAgrestePernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[57:1
 comercioAgrestePernambucano <- GrupoDados(AMOSTRA_COMERCIO[57:127], COMERCIO, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 servicosAgrestePernambucano <- GrupoDados(AMOSTRA_SERVICOS[57:127], SERVICOS, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 admPublicaAgrestePernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[57:127], ADM_PUBLICA, MESOREGIAO_AGRESTE_PERNAMBUCANO)
-
+empregosTotalAgrestePernambucano <- c(AMOSTRA_AGROPECUARIA[57:127], AMOSTRA_EXTRATIVA[57:127], AMOSTRA_INDUSTRIA[57:127], AMOSTRA_CONSTRUCAO[57:127], AMOSTRA_SERVICOS_PUBLICOS[57:127], AMOSTRA_COMERCIO[57:127], AMOSTRA_SERVICOS[57:127], AMOSTRA_ADM_PUBLICA[57:127])
+totalAgrestePernambucano <- GrupoDados(empregosTotalAgrestePernambucano, TOTAL, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 
 #Mesorregião da Zona da Mata Pernambucana
 #comeca em Chã de Alegria (linha 129) vai até Xexéu (linha 171)
@@ -103,7 +103,8 @@ servicosPublicosZonaDaMata <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[128:170], SER
 comercioZonaDaMata <- GrupoDados(AMOSTRA_COMERCIO[128:170], COMERCIO, MESOREGIAO_ZONA_DA_MATA)
 servicosZonaDaMata <- GrupoDados(AMOSTRA_SERVICOS[128:170], SERVICOS, MESOREGIAO_ZONA_DA_MATA)
 admPublicaZonaDaMata <- GrupoDados(AMOSTRA_ADM_PUBLICA[128:170], ADM_PUBLICA, MESOREGIAO_ZONA_DA_MATA)
-
+empregosTotalZonaDaMata <- c(AMOSTRA_AGROPECUARIA[128:170], AMOSTRA_EXTRATIVA[128:170], AMOSTRA_INDUSTRIA[128:170], AMOSTRA_CONSTRUCAO[128:170], AMOSTRA_SERVICOS_PUBLICOS[128:170], AMOSTRA_COMERCIO[128:170], AMOSTRA_SERVICOS[128:170], AMOSTRA_ADM_PUBLICA[128:170])
+totalZonaDaMata <- GrupoDados(empregosTotalZonaDaMata, TOTAL, MESOREGIAO_ZONA_DA_MATA)
 
 #Mesorregião Metropolitana do Recife
 #comeca em Abreu e Lima (linha 172) vai até São Lourenço da Mata (linha 186)
@@ -116,6 +117,8 @@ servicosPublicosMetropolitana <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[171:185], 
 comercioMetropolitana <- GrupoDados(AMOSTRA_COMERCIO[171:185], COMERCIO, MESOREGIAO_METROPOLITANA)
 servicosMetropolitana <- GrupoDados(AMOSTRA_SERVICOS[171:185], SERVICOS, MESOREGIAO_METROPOLITANA)
 admPublicaMetropolitana <- GrupoDados(AMOSTRA_ADM_PUBLICA[171:185], ADM_PUBLICA, MESOREGIAO_METROPOLITANA)
+empregosTotalMetropolitana <- c(AMOSTRA_AGROPECUARIA[171:185], AMOSTRA_EXTRATIVA[171:185], AMOSTRA_INDUSTRIA[171:185], AMOSTRA_CONSTRUCAO[171:185], AMOSTRA_SERVICOS_PUBLICOS[171:185], AMOSTRA_COMERCIO[171:185], AMOSTRA_SERVICOS[171:185], AMOSTRA_ADM_PUBLICA[171:185])
+totalMetropolitana <- GrupoDados(empregosTotalMetropolitana, TOTAL, MESOREGIAO_METROPOLITANA)
 
 ############################################
 # TODO:

@@ -9,6 +9,7 @@ SERVICOS_PUBLICOS <- "Serviços Industriais de Utilidade Pública"
 COMERCIO <- "Comércio"
 SERVICOS <- "Serviços"
 ADM_PUBLICA <- "Administração Pública"
+TOTAL <- "Total"
 
 # Constantes - mesoregiões
 MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO <- "São Francisco Pernambucano"
