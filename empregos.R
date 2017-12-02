@@ -1,8 +1,10 @@
 # set working directory
 #setwd(".\\datasets\\empregos-pe") #Para windows
-setwd("./datasets/empregos-pe") #Para linux
-# data
-data <- read.table("dataset.csv", header = TRUE, sep=";", encoding = "UTF-8")
+#setwd("./datasets/empregos-pe") #Para linux
+
+#imports
+source("GrupoDados.class.R")
+source("empregos.constants.R", encoding = "UTF-8")
 
 #Função para cálculo da moda
 moda <- function(d){
@@ -12,55 +14,12 @@ moda <- function(d){
   return(vmodal)
 }
 
-#Classe que representa um grupo de dados do dataset
-GrupoDados <- function(amostra, label, mesoregiao = NULL) {
-  GrupoDados <- list(
-    label = label,
-    mesoregiao = mesoregiao,
-    media = mean(amostra),
-    moda = moda(amostra),
-    mediana = median(amostra),
-    desvioPadrao = sd(amostra),
-    variancia = var(amostra)
-  )
-  
-  class(GrupoDados) <- "GrupoDados"
-  return(GrupoDados)
-}
-
 ############################################
 # TODO:
 # 1) CALCULAR A MEDIA DO TOTAL DE EMPREGOS
 # SOMAR TODAS AS AREAS DE ATUACAO E DIVIDIR
 # PELO NUMERO DE CIDADES.
 ############################################
-
-# constantes - labels
-AGROPECUARIA <- "Agropecuária"
-EXTRATIVA <- "Extrativa Mineral"
-INDUSTRIA <- "Indústria de Transformação"
-CONSTRUCAO <- "Construção Civil"
-SERVICOS_PUBLICOS <- "Serviços Industriais de Utilidade Pública"
-COMERCIO <- "Comércio"
-SERVICOS <- "Serviços"
-ADM_PUBLICA <- "Administração Pública"
-
-# Constantes - mesoregiões
-MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO <- "São Francisco Pernambucano"
-MESOREGIAO_SERTAO_PERNAMBUCANO <- "Sertão Pernambucano"
-MESOREGIAO_AGRESTE_PERNAMBUCANO <- "Agreste Pernambucano"
-MESOREGIAO_ZONA_DA_MATA <- "Zona da Mata"
-MESOREGIAO_METROPOLITANA <- "Metropolitana do Recife"
-
-# constantes - dados
-AMOSTRA_AGROPECUARIA <- data$Agropecuaria
-AMOSTRA_EXTRATIVA <- data$Extrativa.mineral
-AMOSTRA_INDUSTRIA <- data$Industria.de.transformacao
-AMOSTRA_CONSTRUCAO <- data$Construcao.civil
-AMOSTRA_SERVICOS_PUBLICOS <- data$Servicos.industriais.de.utilidade.publica
-AMOSTRA_COMERCIO <- data$Comercio
-AMOSTRA_SERVICOS <- data$Servicos
-AMOSTRA_ADM_PUBLICA <- data$Administracao.publica
 
 #Agropecuaria
 agropecuaria <- GrupoDados(AMOSTRA_AGROPECUARIA, AGROPECUARIA)
@@ -169,66 +128,7 @@ admPublicaMetropolitana <- GrupoDados(AMOSTRA_ADM_PUBLICA[171:185], ADM_PUBLICA,
 #Portanto, um valor de p < 0.05 indica que você rejeitou a hipótese nula, ou seja,
 #seus dados não possuem distribuição normal.
 #https://rpubs.com/paternogbc/46768
-
-#Total
-shapiro.test(data$Agropecuaria)
-shapiro.test(data$Extrativa.mineral)
-shapiro.test(data$Industria.de.transformacao)
-shapiro.test(data$Construcao.civil)
-shapiro.test(data$Servicos.industriais.de.utilidade.publica)
-shapiro.test(data$Comercio)
-shapiro.test(data$Servicos)
-shapiro.test(data$Administracao.publica)
-
-#Mesorregião do São Francisco Pernambucano
-shapiro.test(data$Agropecuaria[1:15])
-shapiro.test(data$Extrativa.mineral[1:15])
-shapiro.test(data$Industria.de.transformacao[1:15])
-shapiro.test(data$Construcao.civil[1:15])
-shapiro.test(data$Servicos.industriais.de.utilidade.publica[1:15])
-shapiro.test(data$Comercio[1:15])
-shapiro.test(data$Servicos[1:15])
-shapiro.test(data$Administracao.publica[1:15])
-
-#Mesorregião do Sertão Pernambucano
-shapiro.test(data$Agropecuaria[16:56])
-shapiro.test(data$Extrativa.mineral[16:56])
-shapiro.test(data$Industria.de.transformacao[16:56])
-shapiro.test(data$Construcao.civil[16:56])
-shapiro.test(data$Servicos.industriais.de.utilidade.publica[16:56])
-shapiro.test(data$Comercio[16:56])
-shapiro.test(data$Servicos[16:56])
-shapiro.test(data$Administracao.publica[16:56])
-
-#Mesorregião do Agreste Pernambucano
-shapiro.test(data$Agropecuaria[57:127])
-shapiro.test(data$Extrativa.mineral[57:127])
-shapiro.test(data$Industria.de.transformacao[57:127])
-shapiro.test(data$Construcao.civil[57:127])
-shapiro.test(data$Servicos.industriais.de.utilidade.publica[57:127])
-shapiro.test(data$Comercio[57:127])
-shapiro.test(data$Servicos[57:127])
-shapiro.test(data$Administracao.publica[57:127])
-
-#Mesorregião da Zona da Mata Pernambucana
-shapiro.test(data$Agropecuaria[128:170])
-shapiro.test(data$Extrativa.mineral[128:170])
-shapiro.test(data$Industria.de.transformacao[128:170])
-shapiro.test(data$Construcao.civil[128:170])
-shapiro.test(data$Servicos.industriais.de.utilidade.publica[128:170])
-shapiro.test(data$Comercio[128:170])
-shapiro.test(data$Servicos[128:170])
-shapiro.test(data$Administracao.publica[128:170])
-
-#Mesorregião Metropolitana do Recife
-shapiro.test(data$Agropecuaria[171:185])
-shapiro.test(data$Extrativa.mineral[171:185])
-shapiro.test(data$Industria.de.transformacao[171:185])
-shapiro.test(data$Construcao.civil[171:185])
-shapiro.test(data$Servicos.industriais.de.utilidade.publica[171:185])
-shapiro.test(data$Comercio[171:185])
-shapiro.test(data$Servicos[171:185])
-shapiro.test(data$Administracao.publica[171:185])
+# OBS: acessar os seguintes atributos do objetos GrupoDados: shapiroTest e isNormal
 
 ############################################
 # TODO:
