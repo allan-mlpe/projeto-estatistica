@@ -17,6 +17,7 @@ MESOREGIAO_SERTAO_PERNAMBUCANO <- "Sertão Pernambucano"
 MESOREGIAO_AGRESTE_PERNAMBUCANO <- "Agreste Pernambucano"
 MESOREGIAO_ZONA_DA_MATA <- "Zona da Mata"
 MESOREGIAO_METROPOLITANA <- "Metropolitana do Recife"
+ESTADO <- 'Estado de Pernambuco'
 
 # constantes - dados
 AMOSTRA_AGROPECUARIA <- data$Agropecuaria

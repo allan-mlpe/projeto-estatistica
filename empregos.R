@@ -15,32 +15,32 @@ moda <- function(d){
 }
 
 #Agropecuaria
-agropecuaria <- GrupoDados(AMOSTRA_AGROPECUARIA, AGROPECUARIA)
+agropecuaria <- GrupoDados(AMOSTRA_AGROPECUARIA, AGROPECUARIA, ESTADO)
 
 #Extrativa
-extrativa <- GrupoDados(AMOSTRA_EXTRATIVA, EXTRATIVA)
+extrativa <- GrupoDados(AMOSTRA_EXTRATIVA, EXTRATIVA, ESTADO)
 
 #Industria
-industria <- GrupoDados(AMOSTRA_INDUSTRIA, INDUSTRIA)
+industria <- GrupoDados(AMOSTRA_INDUSTRIA, INDUSTRIA, ESTADO)
 
 #Construção
-construcao <- GrupoDados(AMOSTRA_CONSTRUCAO, CONSTRUCAO)
+construcao <- GrupoDados(AMOSTRA_CONSTRUCAO, CONSTRUCAO, ESTADO)
 
 #ServiçosPublicos
-servicosPublicos <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS, SERVICOS_PUBLICOS)
+servicosPublicos <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS, SERVICOS_PUBLICOS, ESTADO)
 
 #Comercio
-comercio <- GrupoDados(AMOSTRA_COMERCIO, COMERCIO)
+comercio <- GrupoDados(AMOSTRA_COMERCIO, COMERCIO, ESTADO)
 
 #Serviços
-servicos <- GrupoDados(AMOSTRA_SERVICOS, SERVICOS)
+servicos <- GrupoDados(AMOSTRA_SERVICOS, SERVICOS, ESTADO)
 
 #AdmPublica
-administracaoPublica <- GrupoDados(AMOSTRA_ADM_PUBLICA, ADM_PUBLICA)
+administracaoPublica <- GrupoDados(AMOSTRA_ADM_PUBLICA, ADM_PUBLICA, ESTADO)
 
 #Total
 empregosTotal <- c(AMOSTRA_AGROPECUARIA, AMOSTRA_EXTRATIVA, AMOSTRA_INDUSTRIA, AMOSTRA_CONSTRUCAO, AMOSTRA_SERVICOS_PUBLICOS, AMOSTRA_COMERCIO, AMOSTRA_SERVICOS, AMOSTRA_ADM_PUBLICA)
-totalGeral <- GrupoDados(empregosTotal, TOTAL)
+totalGeral <- GrupoDados(empregosTotal, TOTAL, ESTADO)
 
 #Os dados foram organizados baseado nas Mesorregiões do estado
 #Mesorregião do São Francisco Pernambucano
