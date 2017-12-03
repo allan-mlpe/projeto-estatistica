@@ -143,3 +143,73 @@ totalMetropolitana <- GrupoDados(empregosTotalMetropolitana, TOTAL, MESOREGIAO_M
 # CADA REGIAO E COM O TOTAL
 ############################################
 #Comparacoes
+# RMR x Total
+# RMR x São Francisco
+# RMR x Sertão
+# RMR x Agreste
+# RMR x Mata
+
+#Mann-Whitney-Wilcoxon Test
+#http://www.r-tutor.com/elementary-statistics/non-parametric-methods/mann-whitney-wilcoxon-test
+#Média total de empregos
+wilcox.test(totalMetropolitana$amostra, totalGeral$amostra, alternative = "less", exact = FALSE)
+wilcox.test(totalMetropolitana$amostra, totalSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(totalMetropolitana$amostra, totalSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(totalMetropolitana$amostra, totalAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(totalMetropolitana$amostra, totalZonaDaMata$amostra, alternative = "less", exact = FALSE)
+
+#Agropecuaria
+wilcox.test(agropecuariaMetropolitana$amostra, agropecuaria$amostra, alternative = "less", exact = FALSE)
+wilcox.test(agropecuariaMetropolitana$amostra, agropecuariaSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(agropecuariaMetropolitana$amostra, agropecuariaSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(agropecuariaMetropolitana$amostra, agropecuariaAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(agropecuariaMetropolitana$amostra, agropecuariaZonaDaMata$amostra, alternative = "less", exact = FALSE)
+
+#Extrativa
+wilcox.test(extrativaMetropolitana$amostra, extrativa$amostra, alternative = "less", exact = FALSE)
+wilcox.test(extrativaMetropolitana$amostra, extrativaSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(extrativaMetropolitana$amostra, extrativaSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(extrativaMetropolitana$amostra, extrativaAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(extrativaMetropolitana$amostra, extrativaZonaDaMata$amostra, alternative = "less", exact = FALSE)
+
+#Industria
+wilcox.test(industriaMetropolitana$amostra, industria$amostra, alternative = "less", exact = FALSE)
+wilcox.test(industriaMetropolitana$amostra, industriaSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(industriaMetropolitana$amostra, industriaSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(industriaMetropolitana$amostra, industriaAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(industriaMetropolitana$amostra, industriaZonaDaMata$amostra, alternative = "less", exact = FALSE)
+
+#Construção
+wilcox.test(construcaoMetropolitana$amostra, construcao$amostra, alternative = "less", exact = FALSE)
+wilcox.test(construcaoMetropolitana$amostra, construcaoSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(construcaoMetropolitana$amostra, construcaoSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(construcaoMetropolitana$amostra, construcaoAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(construcaoMetropolitana$amostra, construcaoZonaDaMata$amostra, alternative = "less", exact = FALSE)
+
+#ServiçosPublicos
+wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicos$amostra, alternative = "less", exact = FALSE)
+wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicosSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicosSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicosAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicosZonaDaMata$amostra, alternative = "less", exact = FALSE)
+
+#Comercio
+wilcox.test(comercioMetropolitana$amostra, comercio$amostra, alternative = "less", exact = FALSE)
+wilcox.test(comercioMetropolitana$amostra, comercioSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(comercioMetropolitana$amostra, comercioSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(comercioMetropolitana$amostra, comercioAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(comercioMetropolitana$amostra, comercioZonaDaMata$amostra, alternative = "less", exact = FALSE)
+
+#Serviços
+wilcox.test(servicosMetropolitana$amostra, servicos$amostra, alternative = "less", exact = FALSE)
+wilcox.test(servicosMetropolitana$amostra, servicosSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(servicosMetropolitana$amostra, servicosSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(servicosMetropolitana$amostra, servicosAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(servicosMetropolitana$amostra, servicosZonaDaMata$amostra, alternative = "less", exact = FALSE)
+
+#AdmPublica
+wilcox.test(admPublicaMetropolitana$amostra, administracaoPublica$amostra, alternative = "less", exact = FALSE)
+wilcox.test(admPublicaMetropolitana$amostra, admPublicaSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(admPublicaMetropolitana$amostra, admPublicaSertaoPernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(admPublicaMetropolitana$amostra, admPublicaAgrestePernambucano$amostra, alternative = "less", exact = FALSE)
+wilcox.test(admPublicaMetropolitana$amostra, admPublicaZonaDaMata$amostra, alternative = "less", exact = FALSE)
