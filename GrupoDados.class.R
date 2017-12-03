@@ -15,5 +15,10 @@ GrupoDados <- function(amostra, label, mesoregiao = NULL) {
   )
   
   class(GrupoDados) <- "GrupoDados"
+  
+  #Plota todas as amostras em um Gráfico Q-Q (Normal Probability Plot)
+  qqnorm(GrupoDados$amostra, main=paste(label, mesoregiao, sep=" - "))
+  qqline(GrupoDados$amostra)
+  
   return(GrupoDados)
 }
