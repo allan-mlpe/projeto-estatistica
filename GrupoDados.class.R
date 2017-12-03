@@ -25,7 +25,7 @@ GrupoDados <- function(amostra, label, mesoregiao = NULL) {
   qqline(GrupoDados$amostra)
 
   #Histogramas
-  hist(GrupoDados$amostra, main=paste(label, mesoregiao, sep=" - "))
+  hist(GrupoDados$amostra, main=paste(label, mesoregiao, sep=" - "), xlab=iconv("Número de Empregos Formais/Cidade", "UTF-8", "latin1"))
 
   return(GrupoDados)
 }
