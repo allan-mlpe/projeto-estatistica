@@ -14,13 +14,6 @@ moda <- function(d){
   return(vmodal)
 }
 
-############################################
-# TODO:
-# 1) CALCULAR A MEDIA DO TOTAL DE EMPREGOS
-# SOMAR TODAS AS AREAS DE ATUACAO E DIVIDIR
-# PELO NUMERO DE CIDADES.
-############################################
-
 #Agropecuaria
 agropecuaria <- GrupoDados(AMOSTRA_AGROPECUARIA, AGROPECUARIA)
 
@@ -120,28 +113,6 @@ admPublicaMetropolitana <- GrupoDados(AMOSTRA_ADM_PUBLICA[171:185], ADM_PUBLICA,
 empregosTotalMetropolitana <- c(AMOSTRA_AGROPECUARIA[171:185], AMOSTRA_EXTRATIVA[171:185], AMOSTRA_INDUSTRIA[171:185], AMOSTRA_CONSTRUCAO[171:185], AMOSTRA_SERVICOS_PUBLICOS[171:185], AMOSTRA_COMERCIO[171:185], AMOSTRA_SERVICOS[171:185], AMOSTRA_ADM_PUBLICA[171:185])
 totalMetropolitana <- GrupoDados(empregosTotalMetropolitana, TOTAL, MESOREGIAO_METROPOLITANA)
 
-############################################
-# TODO:
-# 1) FAZER MAIS ANALISE EXPLORATORIA
-# 2) HISTOGRAMAS
-############################################
-
-#### Testes de Nomalidade ####
-#A hipótese nula do teste de Shapiro-Wilk é que a população possui distribuição normal.
-#Portanto, um valor de p < 0.05 indica que você rejeitou a hipótese nula, ou seja,
-#seus dados não possuem distribuição normal.
-#https://rpubs.com/paternogbc/46768
-# OBS: acessar os seguintes atributos do objetos GrupoDados: shapiroTest e isNormal
-
-############################################
-# TODO:
-# 1) COMPARAR AS MEDIAS DE EMPREGOS DE
-# CADA REGIAO ENTRE SI E COM O TOTAL.
-#
-# 2) COMPARAR AS MEDIAS DE EMPREGOS DE
-# AREAS DE ATUACAO ESPECIFICAS ENTRE
-# CADA REGIAO E COM O TOTAL
-############################################
 #Comparacoes
 # RMR x Total
 # RMR x São Francisco
@@ -151,6 +122,7 @@ totalMetropolitana <- GrupoDados(empregosTotalMetropolitana, TOTAL, MESOREGIAO_M
 
 #Mann-Whitney-Wilcoxon Test
 #http://www.r-tutor.com/elementary-statistics/non-parametric-methods/mann-whitney-wilcoxon-test
+
 #Média total de empregos
 wilcox.test(totalMetropolitana$amostra, totalGeral$amostra, alternative = "less", exact = FALSE)
 wilcox.test(totalMetropolitana$amostra, totalSaoFranciscoPernambucano$amostra, alternative = "less", exact = FALSE)
