@@ -24,5 +24,8 @@ GrupoDados <- function(amostra, label, mesoregiao = NULL) {
   qqnorm(GrupoDados$amostra, main=paste(label, mesoregiao, sep=" - "))
   qqline(GrupoDados$amostra)
 
+  #Histogramas
+  hist(GrupoDados$amostra, main=paste(label, mesoregiao, sep=" - "))
+
   return(GrupoDados)
 }
