@@ -1,4 +1,4 @@
-data <- read.table("datasets/empregos-pe/dataset.csv", header = TRUE, sep=";", encoding = "UTF-8")
+data <- read.table("datasets/empregos-pe/dataset.csv", header = TRUE, sep=",", encoding = "UTF-8")
 
 # constantes - labels
 AGROPECUARIA <- "Agropecuária"
@@ -28,3 +28,4 @@ AMOSTRA_SERVICOS_PUBLICOS <- data$Servicos.industriais.de.utilidade.publica
 AMOSTRA_COMERCIO <- data$Comercio
 AMOSTRA_SERVICOS <- data$Servicos
 AMOSTRA_ADM_PUBLICA <- data$Administracao.publica
+AMOSTRA_TOTAL <- data$Total
