@@ -26,9 +26,6 @@ industria <- GrupoDados(AMOSTRA_INDUSTRIA, INDUSTRIA, ESTADO)
 #Construção
 construcao <- GrupoDados(AMOSTRA_CONSTRUCAO, CONSTRUCAO, ESTADO)
 
-#ServiçosPublicos
-servicosPublicos <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS, SERVICOS_PUBLICOS, ESTADO)
-
 #Comercio
 comercio <- GrupoDados(AMOSTRA_COMERCIO, COMERCIO, ESTADO)
 
@@ -49,7 +46,6 @@ agropecuariaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_AGROPECUARIA[1:15], A
 extrativaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_EXTRATIVA[1:15], EXTRATIVA, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 industriaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_INDUSTRIA[1:15], INDUSTRIA, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 construcaoSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_CONSTRUCAO[1:15], CONSTRUCAO, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
-servicosPublicosSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[1:15], SERVICOS_PUBLICOS, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 comercioSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_COMERCIO[1:15], COMERCIO, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 servicosSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_SERVICOS[1:15], SERVICOS, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
 admPublicaSaoFranciscoPernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[1:15], ADM_PUBLICA, MESOREGIAO_SAO_FRANCISCO_PERNAMBUCANO)
@@ -62,7 +58,6 @@ agropecuariaSertaoPernambucano <- GrupoDados(AMOSTRA_AGROPECUARIA[16:56], AGROPE
 extrativaSertaoPernambucano <- GrupoDados(AMOSTRA_EXTRATIVA[16:56], EXTRATIVA, MESOREGIAO_SERTAO_PERNAMBUCANO)
 industriaSertaoPernambucano <- GrupoDados(AMOSTRA_INDUSTRIA[16:56], INDUSTRIA, MESOREGIAO_SERTAO_PERNAMBUCANO)
 construcaoSertaoPernambucano <- GrupoDados(AMOSTRA_CONSTRUCAO[16:56], CONSTRUCAO, MESOREGIAO_SERTAO_PERNAMBUCANO)
-servicosPublicosSertaoPernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[16:56], SERVICOS_PUBLICOS, MESOREGIAO_SERTAO_PERNAMBUCANO)
 comercioSertaoPernambucano <- GrupoDados(AMOSTRA_COMERCIO[16:56], COMERCIO, MESOREGIAO_SERTAO_PERNAMBUCANO)
 servicosSertaoPernambucano <- GrupoDados(AMOSTRA_SERVICOS[16:56], SERVICOS, MESOREGIAO_SERTAO_PERNAMBUCANO)
 admPublicaSertaoPernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[16:56], ADM_PUBLICA, MESOREGIAO_SERTAO_PERNAMBUCANO)
@@ -75,7 +70,6 @@ agropecuariaAgrestePernambucano <- GrupoDados(AMOSTRA_AGROPECUARIA[57:127], AGRO
 extrativaAgrestePernambucano <- GrupoDados(AMOSTRA_EXTRATIVA[57:127], EXTRATIVA, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 industriaAgrestePernambucano <- GrupoDados(AMOSTRA_INDUSTRIA[57:127], INDUSTRIA, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 construcaoAgrestePernambucano <- GrupoDados(AMOSTRA_CONSTRUCAO[57:127], CONSTRUCAO, MESOREGIAO_AGRESTE_PERNAMBUCANO)
-servicosPublicosAgrestePernambucano <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[57:127], SERVICOS_PUBLICOS, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 comercioAgrestePernambucano <- GrupoDados(AMOSTRA_COMERCIO[57:127], COMERCIO, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 servicosAgrestePernambucano <- GrupoDados(AMOSTRA_SERVICOS[57:127], SERVICOS, MESOREGIAO_AGRESTE_PERNAMBUCANO)
 admPublicaAgrestePernambucano <- GrupoDados(AMOSTRA_ADM_PUBLICA[57:127], ADM_PUBLICA, MESOREGIAO_AGRESTE_PERNAMBUCANO)
@@ -88,7 +82,6 @@ agropecuariaZonaDaMata <- GrupoDados(AMOSTRA_AGROPECUARIA[128:170], AGROPECUARIA
 extrativaZonaDaMata <- GrupoDados(AMOSTRA_EXTRATIVA[128:170], EXTRATIVA, MESOREGIAO_ZONA_DA_MATA)
 industriaZonaDaMata <- GrupoDados(AMOSTRA_INDUSTRIA[128:170], INDUSTRIA, MESOREGIAO_ZONA_DA_MATA)
 construcaoZonaDaMata <- GrupoDados(AMOSTRA_CONSTRUCAO[128:170], CONSTRUCAO, MESOREGIAO_ZONA_DA_MATA)
-servicosPublicosZonaDaMata <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[128:170], SERVICOS_PUBLICOS, MESOREGIAO_ZONA_DA_MATA)
 comercioZonaDaMata <- GrupoDados(AMOSTRA_COMERCIO[128:170], COMERCIO, MESOREGIAO_ZONA_DA_MATA)
 servicosZonaDaMata <- GrupoDados(AMOSTRA_SERVICOS[128:170], SERVICOS, MESOREGIAO_ZONA_DA_MATA)
 admPublicaZonaDaMata <- GrupoDados(AMOSTRA_ADM_PUBLICA[128:170], ADM_PUBLICA, MESOREGIAO_ZONA_DA_MATA)
@@ -101,7 +94,6 @@ agropecuariaMetropolitana <- GrupoDados(AMOSTRA_AGROPECUARIA[171:185], AGROPECUA
 extrativaMetropolitana <- GrupoDados(AMOSTRA_EXTRATIVA[171:185], EXTRATIVA, MESOREGIAO_METROPOLITANA)
 industriaMetropolitana <- GrupoDados(AMOSTRA_INDUSTRIA[171:185], INDUSTRIA, MESOREGIAO_METROPOLITANA)
 construcaoMetropolitana <- GrupoDados(AMOSTRA_CONSTRUCAO[171:185], CONSTRUCAO, MESOREGIAO_METROPOLITANA)
-servicosPublicosMetropolitana <- GrupoDados(AMOSTRA_SERVICOS_PUBLICOS[171:185], SERVICOS_PUBLICOS, MESOREGIAO_METROPOLITANA)
 comercioMetropolitana <- GrupoDados(AMOSTRA_COMERCIO[171:185], COMERCIO, MESOREGIAO_METROPOLITANA)
 servicosMetropolitana <- GrupoDados(AMOSTRA_SERVICOS[171:185], SERVICOS, MESOREGIAO_METROPOLITANA)
 admPublicaMetropolitana <- GrupoDados(AMOSTRA_ADM_PUBLICA[171:185], ADM_PUBLICA, MESOREGIAO_METROPOLITANA)
@@ -152,13 +144,6 @@ wilcox.test(construcaoMetropolitana$amostra, construcaoSertaoPernambucano$amostr
 wilcox.test(construcaoMetropolitana$amostra, construcaoAgrestePernambucano$amostra, alternative = "greater", exact = FALSE)
 wilcox.test(construcaoMetropolitana$amostra, construcaoZonaDaMata$amostra, alternative = "greater", exact = FALSE)
 
-#ServiçosPublicos
-wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicos$amostra, alternative = "greater", exact = FALSE)
-wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicosSaoFranciscoPernambucano$amostra, alternative = "greater", exact = FALSE)
-wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicosSertaoPernambucano$amostra, alternative = "greater", exact = FALSE)
-wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicosAgrestePernambucano$amostra, alternative = "greater", exact = FALSE)
-wilcox.test(servicosPublicosMetropolitana$amostra, servicosPublicosZonaDaMata$amostra, alternative = "greater", exact = FALSE)
-
 #Comercio
 wilcox.test(comercioMetropolitana$amostra, comercio$amostra, alternative = "greater", exact = FALSE)
 wilcox.test(comercioMetropolitana$amostra, comercioSaoFranciscoPernambucano$amostra, alternative = "greater", exact = FALSE)
@@ -179,3 +164,4 @@ wilcox.test(admPublicaMetropolitana$amostra, admPublicaSaoFranciscoPernambucano$
 wilcox.test(admPublicaMetropolitana$amostra, admPublicaSertaoPernambucano$amostra, alternative = "greater", exact = FALSE)
 wilcox.test(admPublicaMetropolitana$amostra, admPublicaAgrestePernambucano$amostra, alternative = "greater", exact = FALSE)
 wilcox.test(admPublicaMetropolitana$amostra, admPublicaZonaDaMata$amostra, alternative = "greater", exact = FALSE)
+

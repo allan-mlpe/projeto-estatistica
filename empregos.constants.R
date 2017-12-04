@@ -5,7 +5,6 @@ AGROPECUARIA <- "Agropecuária"
 EXTRATIVA <- "Extrativa Mineral"
 INDUSTRIA <- "Indústria de Transformação"
 CONSTRUCAO <- "Construção Civil"
-SERVICOS_PUBLICOS <- "Serviços Industriais de Utilidade Pública"
 COMERCIO <- "Comércio"
 SERVICOS <- "Serviços"
 ADM_PUBLICA <- "Administração Pública"
@@ -24,7 +23,6 @@ AMOSTRA_AGROPECUARIA <- data$Agropecuaria
 AMOSTRA_EXTRATIVA <- data$Extrativa.mineral
 AMOSTRA_INDUSTRIA <- data$Industria.de.transformacao
 AMOSTRA_CONSTRUCAO <- data$Construcao.civil
-AMOSTRA_SERVICOS_PUBLICOS <- data$Servicos.industriais.de.utilidade.publica
 AMOSTRA_COMERCIO <- data$Comercio
 AMOSTRA_SERVICOS <- data$Servicos
 AMOSTRA_ADM_PUBLICA <- data$Administracao.publica
