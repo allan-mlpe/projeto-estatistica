@@ -1,4 +1,4 @@
-data <- read.table("datasets/empregos-pe/dataset.csv", header = TRUE, sep=",", encoding = "UTF-8")
+data <- read.table("datasets/empregos-pe/dataset.csv", header = TRUE, sep=";", encoding = "UTF-8")
 
 # constantes - labels
 AGROPECUARIA <- "Agropecuária"

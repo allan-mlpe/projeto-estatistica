@@ -165,3 +165,7 @@ wilcox.test(admPublicaMetropolitana$amostra, admPublicaSertaoPernambucano$amostr
 wilcox.test(admPublicaMetropolitana$amostra, admPublicaAgrestePernambucano$amostra, alternative = "greater", exact = FALSE)
 wilcox.test(admPublicaMetropolitana$amostra, admPublicaZonaDaMata$amostra, alternative = "greater", exact = FALSE)
 
+######## ANÁLISE NA REGIÃO METROPOLITANA ########
+
+
+
