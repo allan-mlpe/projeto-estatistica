@@ -166,6 +166,93 @@ wilcox.test(admPublicaMetropolitana$amostra, admPublicaAgrestePernambucano$amost
 wilcox.test(admPublicaMetropolitana$amostra, admPublicaZonaDaMata$amostra, alternative = "greater", exact = FALSE)
 
 ######## ANÁLISE NA REGIÃO METROPOLITANA ########
+#admPublica x comercio
+wilcox.test(admPublicaMetropolitana$amostra, comercioMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#admPublica x industria
+wilcox.test(admPublicaMetropolitana$amostra, industriaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#admPublica x construção
+wilcox.test(admPublicaMetropolitana$amostra, construcaoMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#admPublica x serviços
+wilcox.test(admPublicaMetropolitana$amostra, servicosMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#admPublica x agropecuaria
+wilcox.test(admPublicaMetropolitana$amostra, agropecuariaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#admPublica x extrativa
+wilcox.test(admPublicaMetropolitana$amostra, extrativaMetropolitana$amostra, alternative = "greater", exact = FALSE)
 
+#comercio x admPublica
+wilcox.test(comercioMetropolitana$amostra, admPublicaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#comercio x industria
+wilcox.test(comercioMetropolitana$amostra, industriaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#comercio x construção
+wilcox.test(comercioMetropolitana$amostra, construcaoMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#comercio x serviços
+wilcox.test(comercioMetropolitana$amostra, servicosMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#comercio x agropecuaria
+wilcox.test(comercioMetropolitana$amostra, agropecuariaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#comercio x extrativa
+wilcox.test(comercioMetropolitana$amostra, extrativaMetropolitana$amostra, alternative = "greater", exact = FALSE)
 
+#industria x admPublica
+wilcox.test(industriaMetropolitana$amostra, admPublicaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#industria x industria
+wilcox.test(industriaMetropolitana$amostra, comercioMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#industria x construção
+wilcox.test(industriaMetropolitana$amostra, construcaoMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#industria x serviços
+wilcox.test(industriaMetropolitana$amostra, servicosMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#industria x agropecuaria
+wilcox.test(industriaMetropolitana$amostra, agropecuariaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#industria x extrativa
+wilcox.test(industriaMetropolitana$amostra, extrativaMetropolitana$amostra, alternative = "greater", exact = FALSE)
 
+#construção x admPublica
+wilcox.test(construcaoMetropolitana$amostra, admPublicaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#construção x industria
+wilcox.test(construcaoMetropolitana$amostra, comercioMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#construção x industria
+wilcox.test(construcaoMetropolitana$amostra, industriaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#construção x serviços
+wilcox.test(construcaoMetropolitana$amostra, servicosMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#construção x agropecuaria
+wilcox.test(construcaoMetropolitana$amostra, agropecuariaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#construção x extrativa
+wilcox.test(construcaoMetropolitana$amostra, extrativaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+
+#serviços x admPublica
+wilcox.test(servicosMetropolitana$amostra, admPublicaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#serviços x industria
+wilcox.test(servicosMetropolitana$amostra, comercioMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#serviços x industria
+wilcox.test(servicosMetropolitana$amostra, industriaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#serviços x construção
+wilcox.test(servicosMetropolitana$amostra, construcaoMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#serviços x agropecuaria
+wilcox.test(servicosMetropolitana$amostra, agropecuariaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#serviços x extrativa
+wilcox.test(servicosMetropolitana$amostra, extrativaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+
+#agropecuaria x admPublica
+wilcox.test(agropecuariaMetropolitana$amostra, admPublicaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#agropecuaria x industria
+wilcox.test(agropecuariaMetropolitana$amostra, comercioMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#agropecuaria x industria
+wilcox.test(agropecuariaMetropolitana$amostra, industriaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#agropecuaria x construção
+wilcox.test(agropecuariaMetropolitana$amostra, construcaoMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#agropecuaria x serviços
+wilcox.test(agropecuariaMetropolitana$amostra, servicosMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#agropecuaria x extrativa
+wilcox.test(agropecuariaMetropolitana$amostra, extrativaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+
+#extrativa x admPublica
+wilcox.test(extrativaMetropolitana$amostra, admPublicaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#extrativa x industria
+wilcox.test(extrativaMetropolitana$amostra, comercioMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#extrativa x industria
+wilcox.test(extrativaMetropolitana$amostra, industriaMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#extrativa x construção
+wilcox.test(extrativaMetropolitana$amostra, construcaoMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#extrativa x serviços
+wilcox.test(extrativaMetropolitana$amostra, servicosMetropolitana$amostra, alternative = "greater", exact = FALSE)
+#extrativa x agropecuaria
+wilcox.test(extrativaMetropolitana$amostra, agropecuariaMetropolitana$amostra, alternative = "greater", exact = FALSE)
